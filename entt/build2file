@@ -32,8 +32,17 @@ lib{entt}:
 #
 {hxx h}{*}:
 {
-  install         = include/
+  install         = include/entt/
   install.subdirs = true
+}
+
+../upstream/src/
+{
+  {hxx h}{*}:
+  {
+    install         = include/
+    install.subdirs = true
+  }
 }
 
 
