@@ -1,11 +1,15 @@
 : 1
 name: entt
-version: 0.1.0-a.0.z
-summary: entt C++ library
-license: proprietary
-description-file: README.md
-url: https://example.org/entt
-email: mjklaim@gmail.com
+version: 3.3.0-a.0.z
+summary: Gaming meets modern C++ - a fast and reliable entity-component system (ECS) and much more.
+license: MIT
+description-file: upstream/README.md
+src-url: https://github.com/skypjack/entt
+doc-url: https://github.com/skypjack/entt/wiki
+email: michele.caini@gmail.com
+package-email: mjklaim@gmail.com
+
 depends: * build2 >= 0.12.0
 depends: * bpkg >= 0.12.0
 #depends: libhello ^1.0.0
+
