@@ -1,0 +1,6 @@
+$out_root/
+{
+  include entt/
+}
+
+export $out_root/entt/$import.target
