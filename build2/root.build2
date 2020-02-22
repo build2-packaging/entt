@@ -1,12 +1,18 @@
-cxx.std = latest
+cxx.std = 17
 
 using cxx
+using c
 
 hxx{*}: extension = hpp
 ixx{*}: extension = ipp
 txx{*}: extension = tpp
 cxx{*}: extension = cpp
+h{*}: extension = h
 
 # The test target for cross-testing (running tests under Wine, etc).
 #
 test.target = $cxx.target
+
+upstream_dir = $src_root/upstream
+include_dir = $upstream_dir/src
+

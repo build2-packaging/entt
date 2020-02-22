@@ -1,33 +1,58 @@
-#include <cassert>
-#include <sstream>
-#include <stdexcept>
+// Extracted from the readme of v3.3.0
+// Just checking that basics compile.
 
 #include <entt/version.hpp>
 #include <entt/entt.hpp>
+#include <cstdint>
 
-int main ()
-{
-  using namespace std;
-  using namespace entt;
+struct position {
+    float x;
+    float y;
+};
 
-  // Basics.
-  //
-  {
-    ostringstream o;
-    say_hello (o, "World");
-    assert (o.str () == "Hello, World!\n");
-  }
+struct velocity {
+    float dx;
+    float dy;
+};
 
-  // Empty name.
-  //
-  try
-  {
-    ostringstream o;
-    say_hello (o, "");
-    assert (false);
-  }
-  catch (const invalid_argument& e)
-  {
-    assert (e.what () == string ("empty name"));
-  }
+void update(entt::registry &registry) {
+    auto view = registry.view<position, velocity>();
+
+    for(auto entity: view) {
+        // gets only the components that are going to be used ...
+
+        auto &vel = view.get<velocity>(entity);
+
+        vel.dx = 0.;
+        vel.dy = 0.;
+
+        // ...
+    }
+}
+
+void update(std::uint64_t dt, entt::registry &registry) {
+    registry.view<position, velocity>().each([dt](auto &pos, auto &vel) {
+        // gets all the components of the view at once ...
+
+        pos.x += vel.dx * dt;
+        pos.y += vel.dy * dt;
+
+        // ...
+    });
+}
+
+int main() {
+    entt::registry registry;
+    std::uint64_t dt = 16;
+
+    for(auto i = 0; i < 10; ++i) {
+        auto entity = registry.create();
+        registry.assign<position>(entity, i * 1.f, i * 1.f);
+        if(i % 2 == 0) { registry.assign<velocity>(entity, i * .1f, i * .1f); }
+    }
+
+    update(dt, registry);
+    update(registry);
+
+    // ...
 }
