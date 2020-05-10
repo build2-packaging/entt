@@ -1,0 +1,6 @@
+: 1
+name: entt
+version: 3.4.0
+summary: Gaming meets modern C++ - a fast and reliable entity-component\
+ system (ECS) and much more.
+license: MIT
