@@ -1,7 +1,6 @@
 // Extracted from the readme of v3.3.0
 // Just checking that basics compile.
 
-#include <entt/version.hpp>
 #include <entt/entt.hpp>
 #include <cstdint>
 
