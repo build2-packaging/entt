@@ -2,25 +2,28 @@ int_libs = # Interface dependencies.
 imp_libs = # Implementation dependencies.
 #import imp_libs += libhello%lib{hello}
 
-lib{entt}: {cxx ixx txx hxx h}{**} $imp_libs $int_libs
+lib{entt}: include/{cxx ixx txx hxx h}{**} $imp_libs $int_libs
 
 # Build options.
 #
-cxx.poptions =+ "-I$out_root" "-I$src_root" "-I$src_base/src"
+cxx.poptions =+ "-I$src_base/include" "-I$out_base/include"
 
 # Export options.
 #
 lib{entt}:
 {
-  cxx.export.poptions = "-I$out_root" "-I$src_root" "-I$src_base/src"
+  cxx.export.poptions = "-I$src_base/include" "-I$out_base/include"
   cxx.export.libs = $int_libs
 }
 
 # Install into the entt/ subdirectory of, say, /usr/include/
 # recreating subdirectories.
 #
-{hxx h}{*}:
+include/
 {
-  install         = include/
-  install.subdirs = true
+  {hxx h}{*}:
+  {
+    install         = include/
+    install.subdirs = true
+  }
 }
