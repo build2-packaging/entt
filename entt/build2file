@@ -2,17 +2,17 @@ int_libs = # Interface dependencies.
 imp_libs = # Implementation dependencies.
 #import imp_libs += libhello%lib{hello}
 
-lib{entt}: {cxx hxx h}{**} $imp_libs $int_libs
+lib{entt}: {cxx ixx txx hxx h}{**} $imp_libs $int_libs
 
 # Build options.
 #
-cxx.poptions =+ "-I$out_root" "-I$src_root" "-I$include_dir"
+cxx.poptions =+ "-I$out_root" "-I$src_root" "-I$src_base/src"
 
 # Export options.
 #
 lib{entt}:
 {
-  cxx.export.poptions = "-I$out_root" "-I$src_root" "-I$include_dir"
+  cxx.export.poptions = "-I$out_root" "-I$src_root" "-I$src_base/src"
   cxx.export.libs = $int_libs
 }
 
@@ -21,17 +21,6 @@ lib{entt}:
 #
 {hxx h}{*}:
 {
-  install         = include/entt/
+  install         = include/
   install.subdirs = true
 }
-
-../upstream/src/
-{
-  {hxx h}{*}:
-  {
-    install         = include/
-    install.subdirs = true
-  }
-}
-
-
