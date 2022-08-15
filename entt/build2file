@@ -2,13 +2,11 @@ int_libs = # Interface dependencies.
 imp_libs = # Implementation dependencies.
 #import imp_libs += libhello%lib{hello}
 
-lib{entt}: $include_dir/{hxx h}{**} $imp_libs $int_libs
-
+lib{entt}: {cxx hxx h}{**} $imp_libs $int_libs
 
 # Build options.
 #
 cxx.poptions =+ "-I$out_root" "-I$src_root" "-I$include_dir"
-
 
 # Export options.
 #
