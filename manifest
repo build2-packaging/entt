@@ -1,6 +1,6 @@
 : 1
 name: entt
-version: 3.13.0
+version: 3.13.2-a.0.z
 summary: Gaming meets modern C++ - a fast and reliable entity-component system (ECS) and much more.
 license: MIT
 description-file: upstream/README.md
