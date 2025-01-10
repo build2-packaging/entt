@@ -1,7 +1,7 @@
 : 1
 name: entt
-version: 3.13.2
-summary: Gaming meets modern C++ - a fast and reliable entity-component system (ECS) and much more.
+version: 3.14.0
+summary: Modern C++ Entity-Component-System (ECS) library
 license: MIT
 description-file: upstream/README.md
 src-url: https://github.com/skypjack/entt
