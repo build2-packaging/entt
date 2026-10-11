@@ -5,7 +5,7 @@ type: lib,binless
 language: c++
 summary: Entity component system (ECS) C++ library
 license: MIT
-description-file: upstream/README.md
+description-file: README.md
 package-description-file: PACKAGE-README.md
 url: https://github.com/skypjack/entt
 doc-url: https://github.com/skypjack/entt/wiki

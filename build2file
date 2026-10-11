@@ -1,6 +1,6 @@
 ./ : { */ -build2/ -docs/ -upstream/ } doc{PACKAGE-README.md} manifest
 
-./ : upstream/doc{README.md} doc{ docs/** -docs/CMakeLists.txt }
+./ : doc{README.md} doc{ docs/** -docs/CMakeLists.txt }
 
 ./ : legal{LICENSE}
 
