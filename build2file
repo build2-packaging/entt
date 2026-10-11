@@ -1,4 +1,4 @@
-./ : { */ -build2/ -upstream/ } manifest
+./ : { */ -build2/ -upstream/ } doc{PACKAGE-README.md} manifest
 
 ./ : upstream/doc{README.md} upstream/doc{ docs/** -docs/CMakeLists.txt }
 
