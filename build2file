@@ -2,6 +2,8 @@
 
 ./ : upstream/doc{README.md} upstream/doc{ docs/** -docs/CMakeLists.txt }
 
+./ : legal{LICENSE}
+
 # Don't install tests.
 #
 tests/: install = false
