@@ -19,3 +19,4 @@
 #*.png binary
 
 entt/include symlink=dir
+docs symlink=dir
