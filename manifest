@@ -3,7 +3,7 @@ name: entt
 version: 4.0.0
 type: lib,binless
 language: c++
-summary: Modern C++ Entity-Component-System (ECS) library
+summary: Entity component system (ECS) C++ library
 license: MIT
 description-file: upstream/README.md
 src-url: https://github.com/skypjack/entt
